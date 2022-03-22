@@ -7,7 +7,7 @@ weight: 20
 
 # Getting Started
 
-## Prerequisites 
+## Prerequisites
 
 To install [superwerker], you need to fulfil the following two prerequisites:
 
@@ -21,7 +21,6 @@ if these are in place, you can now begin the installation process.
 Getting started with [superwerker] is simple: You only need to deploy a single AWS CloudFormation template into an existing AWS account.
 
 1. Sign into your AWS account with your root user email and password if you are not already logged in.
-1. Select the AWS region in which you want to deploy superwerker.
 
 ![GitHub releases for superwerker](/screenshots/installation/aws-signin.png)
 
@@ -35,6 +34,9 @@ After clicking on the **Quick Install** link on GitHub, you will be redirected t
 
 ![CloudFormation for superwerker](/screenshots/installation/cloudformation-start.png)
 
+1. Select the AWS region in which you want to deploy superwerker. superwerker relies on AWS Control Tower, which means you must choose an AWS region in which the service is available. At the time of writing, AWS Control Tower is available in: Canada (Central), Europe (Frankfurt), Europe (London), Europe (Stockholm), Asia Pacific (Singapore), US East (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), and Asia Pacific (Sydney).
+
+![CloudFormation for superwerker](/screenshots/installation/cloudformation-choose-a-region.png)
 ## AWS CloudFormation
 
 The CloudFormation template for superwerker supports disabling of optional components; but for this workshop, please keep all components enabled.
@@ -51,11 +53,24 @@ If your company's primary domain is `example.com` you can consider a domain like
 
 1. Fill in the Domain for automated DNS configuration (see the screenshot below)
 1. Scroll down to the bottom of the page and tick the boxes acknowledging that CloudFormation will create IAM resources such as IAM Roles and IAM Policies
-1. Click the **Create Stack** button and it will start the installation!
+1. Click "Create changeset" (creating a changeset allows us to access stack failure options that are not available if we were to select 'create stack')
 
 ![CloudFormation for superwerker](/screenshots/installation/domain-filled.png)
 
 ![CloudFormation for superwerker](/screenshots/installation/cloudformation-confirm-iam.png)
+
+1. Choose disable "Change sets for nested stacks"
+1. Click "Create changeset"
+
+![CloudFormation for superwerker](/screenshots/installation/cloudformation-create-changeset.png)
+
+1. Wait for the changeset to become ready then press "Execute"
+
+![CloudFormation for superwerker](/screenshots/installation/cloudformation-execute-changeset.png)
+
+1. Choose "Preserve successfully provisioned resources" (this option protects against errors during stack rollouts, and allows continuing the rollout of superwerker even if errors occur during the installation).
+
+![CloudFormation for superwerker](screenshots/installation/cloudformation-preserve-successfully-provisioned-resources.png)
 
 ![CloudFormation for superwerker](/screenshots/installation/cloudformation-started.png)
 

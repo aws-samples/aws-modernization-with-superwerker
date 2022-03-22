@@ -27,6 +27,10 @@ Relying on AWS Config and AWS Security Hub, you will tackle the basics of govern
 
 #### [Automated Backups](/labs/automated-backups.html)
 
-Protecting resources in AWS with automated backups using AWS Backups wraps up this workshop and highlights the included benefits of using [superwerker].
+Protecting resources in AWS with automated backups using AWS Backups highlights another benefit included in [superwerker].
+
+#### [Root User Actions in Subaccounts](/labs/root-user-actions-in-subaccounts.html)
+
+Performing actions that require Root-user access in subaccounts, such as changing support plans and closing accounts wraps up this workshop [superwerker].
 
 [superwerker]: https://superwerker.cloud
